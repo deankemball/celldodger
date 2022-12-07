@@ -54,3 +54,9 @@ export function colorEntityPosition(entity: Entity[], color: string) {
     playerCell?.classList.toggle(color);
   }
 }
+
+export function clearGrid() {
+  while (gridContainer.lastElementChild) {
+    gridContainer.removeChild(gridContainer.lastElementChild);
+  }
+}

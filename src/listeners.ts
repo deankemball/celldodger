@@ -14,9 +14,14 @@ export const helpBox = document.querySelector(
 export const gridContainer = document.querySelector(
   "#grid-container"
 ) as HTMLElement;
-// make bindings for the boxes
-// then add event listeners
-// change style of boxes on click
+export const scoreDisplay = document.querySelector("#score") as HTMLElement;
+export const livesDisplay = document.querySelector("#lives") as HTMLElement;
+export const gameOverScreen = document.querySelector(
+  "#game-over-screen"
+) as HTMLElement;
+export const gameOverButton = document.querySelector(
+  "#game-over-button"
+) as HTMLElement;
 
 settingsButton.addEventListener("click", () => {
   // check if the icon file path includes the word "filled"

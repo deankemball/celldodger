@@ -17,7 +17,7 @@ export const stylesObject: StylesObj = {
 
 export const defaultGameParameters: GameParameters = {
   noPlayers: 1,
-  noEnemies: 6,
+  noEnemies: 7,
   noLives: 3,
   noCoins: 1,
   noRows: 20,
@@ -25,7 +25,7 @@ export const defaultGameParameters: GameParameters = {
   score: 0,
   gameStarted: false,
   gameOver: false,
-  gameSpeed: 2000,
+  gameSpeed: 300,
 };
 
 export const playerControls: PlayerControls = {

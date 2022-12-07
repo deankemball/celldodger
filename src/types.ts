@@ -27,6 +27,7 @@ export interface GameParameters {
 }
 
 export interface Entity {
+  // [{x: 2, y: 3, id: xy_},{x:3,},]
   x: number;
   y: number;
   id: string;
