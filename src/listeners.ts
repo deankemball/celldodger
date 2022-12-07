@@ -11,6 +11,9 @@ export const settingsBox = document.querySelector(
 export const helpBox = document.querySelector(
   "#instructions-box"
 ) as HTMLImageElement;
+export const gridContainer = document.querySelector(
+  "#grid-container"
+) as HTMLElement;
 // make bindings for the boxes
 // then add event listeners
 // change style of boxes on click
