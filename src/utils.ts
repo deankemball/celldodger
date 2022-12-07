@@ -1,6 +1,6 @@
-import { gameParameters } from "./constants";
+import { defaultGameParameters } from "./constants";
 import { gridContainer } from "./listeners";
-import { Entity, Player } from "./types";
+import { Entity } from "./types";
 
 export function generateRandomInt(max: number) {
   return Math.round(Math.random() * max);
@@ -46,8 +46,6 @@ export function generateEntityPosition(
     }
   }
   return entities;
-
-  //   check entities array doesnt already include an entity with the same position
 }
 
 export function colorEntityPosition(entity: Entity[], color: string) {

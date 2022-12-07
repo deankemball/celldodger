@@ -1,4 +1,4 @@
-import { StylesObj } from "./types";
+import { GameParameters, StylesObj } from "./types";
 
 export const stylesObject: StylesObj = {
   bgColor: "bg-bgColor",
@@ -15,7 +15,7 @@ export const stylesObject: StylesObj = {
   borderColor: "",
 };
 
-export const gameParameters = {
+export const defaultGameParameters: GameParameters = {
   noPlayers: 1,
   noEnemies: 6,
   noLives: 3,
@@ -25,4 +25,5 @@ export const gameParameters = {
   score: 0,
   gameStarted: false,
   gameOver: false,
+  gameSpeed: 300,
 };

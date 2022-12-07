@@ -13,14 +13,14 @@ export interface StylesObj {
   plusLifeFlashColor: string;
 }
 
-export interface GameParams {
-  noPlayers: string;
-  noEnemies: string;
+export interface GameParameters {
+  noPlayers: number;
+  noEnemies: number;
   noCoins: number;
   noLives: number;
   gameSpeed: number;
-  rows: number;
-  columns: number;
+  noRows: number;
+  noColumns: number;
   score: number;
   gameStarted: boolean;
   gameOver: boolean;
