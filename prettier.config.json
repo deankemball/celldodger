@@ -1,0 +1,17 @@
+{
+  "overrides": [
+    {
+      "files": "*.listeners.ts",
+      "options": {
+        "semi": true,
+        "max_line_length": 400
+      }
+    },
+    {
+      "files": ["*.html", "legacy/**/*.js"],
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
+}
