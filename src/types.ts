@@ -40,3 +40,10 @@ export interface Player extends Entity {
   lives?: number;
   lastKeyPressed?: string;
 }
+
+export interface PlayerControls {
+  left: string;
+  up: string;
+  right: string;
+  down: string;
+}

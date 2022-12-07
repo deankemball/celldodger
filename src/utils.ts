@@ -1,4 +1,4 @@
-import { defaultGameParameters } from "./constants";
+import { defaultGameParameters, playerControls } from "./constants";
 import { gridContainer } from "./listeners";
 import { Entity } from "./types";
 
@@ -54,3 +54,16 @@ export function colorEntityPosition(entity: Entity[], color: string) {
     playerCell?.classList.add(color);
   }
 }
+
+document.addEventListener("keydown", (event) => {
+  event.preventDefault();
+  if (event.code === playerControls.left) {
+    console.log("move left");
+  } else if (event.code === playerControls.right) {
+    console.log("move right");
+  } else if (event.code === playerControls.up) {
+    console.log("move up");
+  } else if (event.code === playerControls.down) {
+    console.log("move down");
+  }
+});

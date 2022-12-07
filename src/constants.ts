@@ -1,4 +1,4 @@
-import { GameParameters, StylesObj } from "./types";
+import { GameParameters, PlayerControls, StylesObj } from "./types";
 
 export const stylesObject: StylesObj = {
   bgColor: "bg-bgColor",
@@ -26,4 +26,11 @@ export const defaultGameParameters: GameParameters = {
   gameStarted: false,
   gameOver: false,
   gameSpeed: 300,
+};
+
+export const playerControls: PlayerControls = {
+  left: "ArrowLeft",
+  up: "ArrowUp",
+  right: "ArrowRight",
+  down: "ArrowDown",
 };
