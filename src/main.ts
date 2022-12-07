@@ -72,8 +72,21 @@ function movePlayer() {
   colorEntityPosition(players, stylesObject.playerColor);
 }
 
+function checkPlayerCoinCollisions(players: Player[], coins: Coin[]) {
+  const collision = coins.some((coin) => {
+    return coin.x === players[0].x && coin.y === players[0].y;
+  });
+  if (collision) {
+    colorEntityPosition(coins, stylesObject.coinColor);
+    coins = generateEntityPosition(gameParams.noRows, gameParams.noColumns, 1);
+    colorEntityPosition(coins, stylesObject.coinColor);
+  }
+}
+
 function updateGameState() {
   movePlayer();
+  // check for coin collisions
+  checkPlayerCoinCollisions(players, coins);
   // move enemies
 }
 
