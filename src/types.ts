@@ -37,6 +37,6 @@ export interface Coin extends Entity {}
 export interface Heart extends Entity {}
 
 export interface Player extends Entity {
-  lives: number;
-  lastKeyPressed: string;
+  lives?: number;
+  lastKeyPressed?: string;
 }

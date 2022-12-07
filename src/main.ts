@@ -1,19 +1,33 @@
 import { gameParameters, stylesObject } from "./constants";
-import { Player } from "./types";
+import { Coin, Enemy, Player } from "./types";
 import {
-  colorPlayerPosition,
+  colorEntityPosition,
   generateGrid,
-  generatePlayerPosition,
+  generateEntityPosition,
 } from "./utils";
 
 generateGrid(gameParameters.noRows, gameParameters.noColumns);
 
 let players: Player[] = [];
-console.log(players);
-generatePlayerPosition(
+let coins: Coin[] = [];
+let enemies: Enemy[] = [];
+
+players = generateEntityPosition(
   gameParameters.noRows,
   gameParameters.noColumns,
-  players
+  gameParameters.noPlayers
+);
+coins = generateEntityPosition(
+  gameParameters.noRows,
+  gameParameters.noColumns,
+  gameParameters.noCoins
+);
+enemies = generateEntityPosition(
+  gameParameters.noRows,
+  gameParameters.noColumns,
+  gameParameters.noEnemies
 );
 
-colorPlayerPosition(players, stylesObject.playerColor);
+colorEntityPosition(players, stylesObject.playerColor);
+colorEntityPosition(coins, stylesObject.coinColor);
+colorEntityPosition(enemies, stylesObject.enemyColor);

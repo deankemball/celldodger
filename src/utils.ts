@@ -17,24 +17,42 @@ export function generateGrid(columns: number, rows: number) {
   }
 }
 
-export function generatePlayerPosition(
+export function generateEntityPosition(
   rows: number,
   columns: number,
-  entities: Player[]
+  noEntities: number
 ) {
-  const xInt = generateRandomInt(rows);
-  const yInt = generateRandomInt(columns);
-  const entity: Player = {
-    x: xInt,
-    y: yInt,
-    id: `xy_x${xInt}-y${yInt}`,
-    lastKeyPressed: "",
-    lives: gameParameters.noLives,
-  };
-  entities.push(entity);
+  let entities: Entity[] = [];
+  let id = 0;
+  while (entities.length < noEntities) {
+    id++;
+    const xInt = generateRandomInt(rows);
+    const yInt = generateRandomInt(columns);
+    const entity: Entity = {
+      x: xInt,
+      y: yInt,
+      id: `xy_x${xInt}-y${yInt}`,
+    };
+
+    const match = entities.some((current) => {
+      return current.id === entity.id;
+    });
+
+    if (match) {
+      console.log("prevented duplicate entity");
+      continue;
+    } else {
+      entities.push(entity);
+    }
+  }
+  return entities;
+
+  //   check entities array doesnt already include an entity with the same position
 }
 
-export function colorPlayerPosition(players: Player[], color: string) {
-  const playerCell = document.querySelector(`#${players[0].id}`);
-  playerCell?.classList.add(color);
+export function colorEntityPosition(entity: Entity[], color: string) {
+  for (let i = 0; i < entity.length; i++) {
+    const playerCell = document.querySelector(`#${entity[i].id}`);
+    playerCell?.classList.add(color);
+  }
 }

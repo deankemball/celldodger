@@ -17,6 +17,7 @@ export const stylesObject: StylesObj = {
 
 export const gameParameters = {
   noPlayers: 1,
+  noEnemies: 6,
   noLives: 3,
   noCoins: 1,
   noRows: 20,
