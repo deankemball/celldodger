@@ -1,12 +1,18 @@
-export const stylesObject = {
-  black: "000000",
-  bgColor: "#141414",
-  textColor: "#FDFFFC",
-  playerColor: "#ED1C24",
-  coinColor: "#F1D302",
-  enemyColor: "#0081A7",
-  gridColor: "#292929",
-  heartColor: "#ff69b4",
+import { StylesObj } from "./types";
+
+export const stylesObject: StylesObj = {
+  bgColor: "bg-bgColor",
+  textColor: "text-textColor",
+  playerColor: "bg-playerColor",
+  coinColor: "bg-coinColor",
+  enemyColor: "bg-enemyColor",
+  heartColor: "bg-heartColor",
+  gridColor: "bg-gridColor",
+  gameOverTextColor: "text-playerColor",
+  minusLifeFlashColor: "border-playerColor",
+  plusScoreFlashColor: "border-coinColor",
+  plusLifeFlashColor: "border-heartColor",
+  borderColor: "",
 };
 
 export const gameParameters = {
@@ -16,4 +22,6 @@ export const gameParameters = {
   noRows: 20,
   noColumns: 20,
   score: 0,
+  gameStarted: false,
+  gameOver: false,
 };
