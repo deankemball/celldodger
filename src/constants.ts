@@ -25,7 +25,7 @@ export const defaultGameParameters: GameParameters = {
   score: 0,
   gameStarted: false,
   gameOver: false,
-  gameSpeed: 300,
+  gameSpeed: 2000,
 };
 
 export const playerControls: PlayerControls = {

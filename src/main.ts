@@ -58,20 +58,17 @@ document.addEventListener("keydown", (event) => {
 });
 
 function movePlayer() {
-  // turn off old color
   colorEntityPosition(players, stylesObject.playerColor);
-  // update the position of the player object
-  if ((players[0].lastKeyPressed = playerControls.left)) {
-    players[0].x -= 1;
-  } else if ((players[0].lastKeyPressed = playerControls.up)) {
-    players[0].y -= 1;
-  } else if ((players[0].lastKeyPressed = playerControls.right)) {
-    players[0].x += 1;
-  } else if ((players[0].lastKeyPressed = playerControls.down)) {
-    players[0].y += 1;
+  if (players[0].lastKeyPressed === playerControls.left) {
+    if (players[0].x !== 0) players[0].x -= 1;
+  } else if (players[0].lastKeyPressed === playerControls.up) {
+    if (players[0].y !== 0) players[0].y -= 1;
+  } else if (players[0].lastKeyPressed === playerControls.right) {
+    if (players[0].x !== gameParams.noRows - 1) players[0].x += 1;
+  } else if (players[0].lastKeyPressed === playerControls.down) {
+    if (players[0].y !== gameParams.noColumns - 1) players[0].y += 1;
   }
   players[0].id = `xy_x${players[0].x}-y${players[0].y}`;
-  // turn on new color
   colorEntityPosition(players, stylesObject.playerColor);
 }
 
