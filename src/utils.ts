@@ -51,19 +51,6 @@ export function generateEntityPosition(
 export function colorEntityPosition(entity: Entity[], color: string) {
   for (let i = 0; i < entity.length; i++) {
     const playerCell = document.querySelector(`#${entity[i].id}`);
-    playerCell?.classList.add(color);
+    playerCell?.classList.toggle(color);
   }
 }
-
-document.addEventListener("keydown", (event) => {
-  event.preventDefault();
-  if (event.code === playerControls.left) {
-    console.log("move left");
-  } else if (event.code === playerControls.right) {
-    console.log("move right");
-  } else if (event.code === playerControls.up) {
-    console.log("move up");
-  } else if (event.code === playerControls.down) {
-    console.log("move down");
-  }
-});
