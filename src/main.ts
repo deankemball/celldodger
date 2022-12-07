@@ -70,11 +70,12 @@ function movePlayer() {
   }
   players[0].id = `xy_x${players[0].x}-y${players[0].y}`;
   colorEntityPosition(players, stylesObject.playerColor);
+  checkPlayerCoinCollisions(players, coins);
 }
 
-function checkPlayerCoinCollisions(players: Player[], coins: Coin[]) {
-  const collision = coins.some((coin) => {
-    return coin.x === players[0].x && coin.y === players[0].y;
+function checkPlayerCoinCollisions(playersArray: Player[], coinArray: Coin[]) {
+  const collision = coinArray.some(({ x, y }) => {
+    return x === playersArray[0].x && y === playersArray[0].y;
   });
   if (collision) {
     colorEntityPosition(coins, stylesObject.coinColor);
@@ -85,8 +86,6 @@ function checkPlayerCoinCollisions(players: Player[], coins: Coin[]) {
 
 function updateGameState() {
   movePlayer();
-  // check for coin collisions
-  checkPlayerCoinCollisions(players, coins);
   // move enemies
 }
 
